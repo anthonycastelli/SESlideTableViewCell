@@ -1013,9 +1013,9 @@ typedef NS_OPTIONS(NSUInteger, SESlideStateOptions) {
 	}
 	label.textColor = textColor;
 	CGSize textSize = [label sizeThatFits:CGSizeMake(FLT_MAX, FLT_MAX)];
-	CGFloat width = MAX(textSize.width, image.size.width);
+	CGFloat width = MAX(textSize.width, image.size.width) + 20;
 	imageView.frame = CGRectMake((width - image.size.width) * 0.5, 0, image.size.width, image.size.height);
-	label.frame = CGRectMake((width - textSize.width) * 0.5, image.size.height, textSize.width, textSize.height);
+	label.frame = CGRectMake((width - textSize.width) * 0.5, image.size.height + 8, textSize.width, textSize.height);
 	UIView* subView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, image.size.height + textSize.height)];
 
 	[subView addSubview:imageView];
